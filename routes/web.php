@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/','FilmController@index')->name('film');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
