@@ -18,4 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/films', 'FilmController@index')->name('film');
+Route::get('/film/create', 'FilmController@create')->name('film.create');
+Route::post('/film/store', 'FilmController@store')->name('film.store');
+Route::get('/film/{id}/edit', 'FilmController@edit')->name('film.edit');
+Route::post('/film/update', 'FilmController@update')->name('film.update');
