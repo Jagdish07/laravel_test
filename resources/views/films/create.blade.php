@@ -55,8 +55,13 @@
                             <label for="rating" class="col-md-4 col-form-label text-md-right">{{ __('Rating') }}</label>
 
                             <div class="col-md-6">
-                                <input id="rating" type="text" class="form-control{{ $errors->has('rating') ? ' is-invalid' : '' }}" name="rating" value="{{ old('rating') }}" required>
-
+                                <select id="rating" type="text" class="form-control{{ $errors->has('rating') ? ' is-invalid' : '' }}" name="rating">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
                                 @if ($errors->has('rating'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('rating') }}</strong>

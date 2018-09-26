@@ -25,7 +25,7 @@
                               <tr>
                                 <td>{{ ++$key }}</td>
                                 <td>{{ $value->name }}</td>
-                                <td>{{ $value->release_date }}</td>
+                                <td>{{ date('Y-m-d', strtotime($value->release_date)) }}</td>
                                 <td>{{ $value->ticket_price }}</td>
                                 <td>@for($i=1;$i<=$value->rating;$i++) {{ '*' }} @endfor</td>
                                 <td><a href="{{ URL::to('film/' . $value->id . '/edit') }}">Edit</a></td>

@@ -58,7 +58,31 @@
                             <label for="rating" class="col-md-4 col-form-label text-md-right">{{ __('Rating') }}</label>
 
                             <div class="col-md-6">
-                                <input id="rating" type="text" class="form-control{{ $errors->has('rating') ? ' is-invalid' : '' }}" name="rating" value="{{ $film->rating }}" required>
+                                <select id="rating" type="text" class="form-control{{ $errors->has('rating') ? ' is-invalid' : '' }}" name="rating">
+                                    <?php
+                                    $rateOne = '';
+                                    $ratesecond = '';
+                                    $rateThird = '';
+                                    $rateFourth= '';
+                                    $rateFive = '';
+                                    if($film->rating == '1'){
+                                        $rateOne = 'selected="selected"';
+                                    } else if($film->rating == '2'){
+                                        $ratesecond = 'selected="selected"';
+                                    } else if($film->rating == '3'){
+                                        $rateThird = 'selected="selected"';
+                                    } else if($film->rating == '4'){
+                                        $rateFourth = 'selected="selected"';
+                                    }  else {
+                                        $rateFive = 'selected="selected"';
+                                    }
+                                    ?>
+                                    <option {{ $rateOne }} value="1"> 1</option>
+                                    <option {{ $ratesecond }} value="2">2</option>
+                                    <option {{ $rateThird }} value="3">3</option>
+                                    <option {{ $rateFourth }} value="4">4</option>
+                                    <option {{ $rateFive }} value="5">5</option>
+                                </select>
 
                                 @if ($errors->has('rating'))
                                     <span class="invalid-feedback" role="alert">

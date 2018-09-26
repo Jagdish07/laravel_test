@@ -19,10 +19,11 @@ Route::get('/','FilmController@index')->name('film');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/films', 'FilmController@index')->name('film');
-Route::get('/film/create', 'FilmController@create')->name('film.create');
-Route::post('/film/store', 'FilmController@store')->name('film.store');
-Route::get('/film/{id}/edit', 'FilmController@edit')->name('film.edit');
-Route::post('/film/update', 'FilmController@update')->name('film.update');
+Route::get('/film/{id}', 'FilmController@show');
+
+Route::get('/managefilms', 'ManageFilmController@index')->name('managefilms');
+Route::get('/film/create', 'ManageFilmController@create')->name('film.create');
+Route::post('/film/store', 'ManageFilmController@store')->name('film.store');
+Route::get('/film/{id}/edit', 'ManageFilmController@edit')->name('film.edit');
+Route::post('/film/update', 'ManageFilmController@update')->name('film.update');
